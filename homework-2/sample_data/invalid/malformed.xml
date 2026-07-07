@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>cust-001</customer_id>
+    <customer_email>invalid-email-no-domain</customer_email>
+    <customer_name>Test User</customer_name>
+    <subject>Test</subject>
+    <description>Test description</description>
+  </ticket>
+  <ticket>
+    <customer_id>cust-002</customer_id>
+    <customer_email>valid@example.com</customer_email>
+    <customer_name></customer_name>
+    <subject></subject>
+    <description>Missing required fields</description>
+  </ticket>
+  <ticket>
+    <customer_id></customer_id>
+    <customer_email>test@example.com</customer_email>
+    <customer_name>Test</customer_name>
+    <subject>Test</subject>
+    <description>Missing customer ID</description>
+  </ticket>
+</tickets>

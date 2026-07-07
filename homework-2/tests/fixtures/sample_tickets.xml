@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>cust-201</customer_id>
+    <customer_email>alice.johnson@example.com</customer_email>
+    <customer_name>Alice Johnson</customer_name>
+    <subject>Cannot Login</subject>
+    <description>I cannot access my account after resetting my password</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>new</status>
+    <tags>
+      <tag>urgent</tag>
+      <tag>account</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-202</customer_id>
+    <customer_email>bob.smith@example.com</customer_email>
+    <customer_name>Bob Smith</customer_name>
+    <subject>App Crashes on Startup</subject>
+    <description>The application crashes immediately when I launch it</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>crash</tag>
+      <tag>bug</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-203</customer_id>
+    <customer_email>charlie.brown@example.com</customer_email>
+    <customer_name>Charlie Brown</customer_name>
+    <subject>Unexpected Charge</subject>
+    <description>There is an unauthorized charge on my invoice from last month</description>
+    <category>billing_question</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>billing</tag>
+      <tag>payment</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-204</customer_id>
+    <customer_email>diana.prince@example.com</customer_email>
+    <customer_name>Diana Prince</customer_name>
+    <subject>Password Reset Required</subject>
+    <description>I need to reset my password as I forgot it</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>password</tag>
+      <tag>access</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-205</customer_id>
+    <customer_email>evan.davis@example.com</customer_email>
+    <customer_name>Evan Davis</customer_name>
+    <subject>Feature Request Dark Mode</subject>
+    <description>Would be great if the app had a dark mode for night time usage</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <tags>
+      <tag>feature</tag>
+      <tag>suggestion</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-206</customer_id>
+    <customer_email>fiona.green@example.com</customer_email>
+    <customer_name>Fiona Green</customer_name>
+    <subject>2FA Not Working</subject>
+    <description>Two factor authentication is not working for my account</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>new</status>
+    <tags>
+      <tag>security</tag>
+      <tag>2fa</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-207</customer_id>
+    <customer_email>grace.lee@example.com</customer_email>
+    <customer_name>Grace Lee</customer_name>
+    <subject>Invoice Details Wrong</subject>
+    <description>The invoice shows incorrect billing details for my account</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>invoice</tag>
+      <tag>billing</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-208</customer_id>
+    <customer_email>henry.wilson@example.com</customer_email>
+    <customer_name>Henry Wilson</customer_name>
+    <subject>Steps to Reproduce Bug</subject>
+    <description>I can reproduce the bug by clicking button A then button B</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>defect</tag>
+      <tag>regression</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-209</customer_id>
+    <customer_email>iris.martinez@example.com</customer_email>
+    <customer_name>Iris Martinez</customer_name>
+    <subject>Production Server Down</subject>
+    <description>The production server is completely down affecting all users</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>outage</tag>
+      <tag>critical</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-210</customer_id>
+    <customer_email>jack.thompson@example.com</customer_email>
+    <customer_name>Jack Thompson</customer_name>
+    <subject>Refund Request</subject>
+    <description>I would like to request a refund for the previous purchase</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <tags>
+      <tag>refund</tag>
+      <tag>payment</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-211</customer_id>
+    <customer_email>karen.white@example.com</customer_email>
+    <customer_name>Karen White</customer_name>
+    <subject>Account Locked Out</subject>
+    <description>My account appears to be locked and I cannot login</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>new</status>
+    <tags>
+      <tag>locked</tag>
+      <tag>access</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-212</customer_id>
+    <customer_email>liam.taylor@example.com</customer_email>
+    <customer_name>Liam Taylor</customer_name>
+    <subject>Critical Security Issue</subject>
+    <description>There is a critical security vulnerability in the system</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>security</tag>
+      <tag>critical</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-213</customer_id>
+    <customer_email>mia.anderson@example.com</customer_email>
+    <customer_name>Mia Anderson</customer_name>
+    <subject>Enhancement Suggestion</subject>
+    <description>It would be nice to have email notifications for updates</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <status>new</status>
+    <tags>
+      <tag>suggestion</tag>
+      <tag>enhancement</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-214</customer_id>
+    <customer_email>noah.thomas@example.com</customer_email>
+    <customer_name>Noah Thomas</customer_name>
+    <subject>Payment Failed</subject>
+    <description>My payment is failing when trying to checkout</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>payment</tag>
+      <tag>error</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-215</customer_id>
+    <customer_email>olivia.jackson@example.com</customer_email>
+    <customer_name>Olivia Jackson</customer_name>
+    <subject>Cannot Access Features</subject>
+    <description>I cannot access certain features of the application</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>access</tag>
+      <tag>feature</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-216</customer_id>
+    <customer_email>paul.harris@example.com</customer_email>
+    <customer_name>Paul Harris</customer_name>
+    <subject>Cosmetic UI Issue</subject>
+    <description>There is a minor cosmetic issue with the user interface styling</description>
+    <category>bug_report</category>
+    <priority>low</priority>
+    <status>new</status>
+    <tags>
+      <tag>minor</tag>
+      <tag>cosmetic</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-217</customer_id>
+    <customer_email>quinn.martin@example.com</customer_email>
+    <customer_name>Quinn Martin</customer_name>
+    <subject>Billing Subscription</subject>
+    <description>I need help understanding my subscription billing cycle</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <tags>
+      <tag>subscription</tag>
+      <tag>billing</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-218</customer_id>
+    <customer_email>rachel.thompson@example.com</customer_email>
+    <customer_name>Rachel Thompson</customer_name>
+    <subject>Login Credentials Not Working</subject>
+    <description>My username and password combination is not being accepted</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>login</tag>
+      <tag>credentials</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-219</customer_id>
+    <customer_email>samuel.clark@example.com</customer_email>
+    <customer_name>Samuel Clark</customer_name>
+    <subject>App Performance Slow</subject>
+    <description>The application is running very slowly and performance is degraded</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>performance</tag>
+      <tag>slow</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-220</customer_id>
+    <customer_email>tina.robinson@example.com</customer_email>
+    <customer_name>Tina Robinson</customer_name>
+    <subject>Improvement Idea</subject>
+    <description>The search functionality could be improved with better filters</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <tags>
+      <tag>improvement</tag>
+      <tag>search</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-221</customer_id>
+    <customer_email>ulysses.garcia@example.com</customer_email>
+    <customer_name>Ulysses Garcia</customer_name>
+    <subject>System Error Messages</subject>
+    <description>I keep seeing error messages that I cannot understand</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>error</tag>
+      <tag>exception</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-222</customer_id>
+    <customer_email>victoria.rodriguez@example.com</customer_email>
+    <customer_name>Victoria Rodriguez</customer_name>
+    <subject>Email Verification Issue</subject>
+    <description>I cannot receive the email verification code for signup</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>email</tag>
+      <tag>verification</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-223</customer_id>
+    <customer_email>william.lewis@example.com</customer_email>
+    <customer_name>William Lewis</customer_name>
+    <subject>Invoice Number Missing</subject>
+    <description>My invoice is missing the required invoice number</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>invoice</tag>
+      <tag>number</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-224</customer_id>
+    <customer_email>xena.walker@example.com</customer_email>
+    <customer_name>Xena Walker</customer_name>
+    <subject>Defect in Checkout Process</subject>
+    <description>The checkout process has a defect preventing purchases</description>
+    <category>bug_report</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>defect</tag>
+      <tag>checkout</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-225</customer_id>
+    <customer_email>yancy.hall@example.com</customer_email>
+    <customer_name>Yancy Hall</customer_name>
+    <subject>Cannot Sign In New Device</subject>
+    <description>I am unable to sign in from my new device</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>new</status>
+    <tags>
+      <tag>signin</tag>
+      <tag>device</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-226</customer_id>
+    <customer_email>zara.young@example.com</customer_email>
+    <customer_name>Zara Young</customer_name>
+    <subject>Monthly Invoice</subject>
+    <description>Where can I access my monthly invoice statements</description>
+    <category>billing_question</category>
+    <priority>low</priority>
+    <status>new</status>
+    <tags>
+      <tag>invoice</tag>
+      <tag>statement</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-227</customer_id>
+    <customer_email>adam.king@example.com</customer_email>
+    <customer_name>Adam King</customer_name>
+    <subject>Regression Testing Needed</subject>
+    <description>This is a regression that appeared in the latest update</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>regression</tag>
+      <tag>update</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-228</customer_id>
+    <customer_email>bella.wright@example.com</customer_email>
+    <customer_name>Bella Wright</customer_name>
+    <subject>Account Access Denied</subject>
+    <description>I am getting access denied errors when trying to login</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>new</status>
+    <tags>
+      <tag>access</tag>
+      <tag>denied</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Safari</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-229</customer_id>
+    <customer_email>charles.lopez@example.com</customer_email>
+    <customer_name>Charles Lopez</customer_name>
+    <subject>Blocking Issue</subject>
+    <description>This issue is completely blocking me from using the app</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <tags>
+      <tag>blocking</tag>
+      <tag>critical</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>cust-230</customer_id>
+    <customer_email>diana.hill@example.com</customer_email>
+    <customer_name>Diana Hill</customer_name>
+    <subject>Nice to Have Feature</subject>
+    <description>It would be nice to have offline functionality in the app</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <status>new</status>
+    <tags>
+      <tag>nice-to-have</tag>
+      <tag>offline</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+</tickets>

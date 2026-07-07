@@ -1,0 +1,51 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,status,tags,metadata_source,metadata_browser,metadata_device_type
+cust-001,alice.johnson@example.com,Alice Johnson,Cannot Login,I cannot access my account after resetting my password,account_access,urgent,new,urgent|account,web_form,Chrome,desktop
+cust-002,bob.smith@example.com,Bob Smith,App Crashes on Startup,The application crashes immediately when I launch it,technical_issue,high,new,crash|bug,api,Safari,mobile
+cust-003,charlie.brown@example.com,Charlie Brown,Unexpected Charge,There is an unauthorized charge on my invoice from last month,billing_question,urgent,in_progress,billing|payment,email,Firefox,desktop
+cust-004,diana.prince@example.com,Diana Prince,Password Reset Required,I need to reset my password as I forgot it,account_access,high,new,password|access,web_form,Edge,tablet
+cust-005,evan.davis@example.com,Evan Davis,Feature Request Dark Mode,Would be great if the app had a dark mode for night time usage,feature_request,medium,new,feature|suggestion,chat,Chrome,mobile
+cust-006,fiona.green@example.com,Fiona Green,2FA Not Working,Two factor authentication is not working for my account,account_access,urgent,new,security|2fa,api,Safari,desktop
+cust-007,grace.lee@example.com,Grace Lee,Invoice Details Wrong,The invoice shows incorrect billing details for my account,billing_question,high,in_progress,invoice|billing,email,Firefox,mobile
+cust-008,henry.wilson@example.com,Henry Wilson,Steps to Reproduce Bug,I can reproduce the bug by clicking button A then button B,bug_report,high,new,defect|regression,web_form,Chrome,desktop
+cust-009,iris.martinez@example.com,Iris Martinez,Production Server Down,The production server is completely down affecting all users,technical_issue,urgent,in_progress,outage|critical,api,Safari,desktop
+cust-010,jack.thompson@example.com,Jack Thompson,Refund Request,I would like to request a refund for the previous purchase,billing_question,medium,new,refund|payment,email,Edge,tablet
+cust-011,karen.white@example.com,Karen White,Account Locked Out,My account appears to be locked and I cannot login,account_access,urgent,new,locked|access,web_form,Firefox,mobile
+cust-012,liam.taylor@example.com,Liam Taylor,Critical Security Issue,There is a critical security vulnerability in the system,technical_issue,urgent,in_progress,security|critical,api,Chrome,desktop
+cust-013,mia.anderson@example.com,Mia Anderson,Enhancement Suggestion,It would be nice to have email notifications for updates,feature_request,low,new,suggestion|enhancement,chat,Safari,mobile
+cust-014,noah.thomas@example.com,Noah Thomas,Payment Failed,My payment is failing when trying to checkout,billing_question,high,in_progress,payment|error,web_form,Firefox,desktop
+cust-015,olivia.jackson@example.com,Olivia Jackson,Cannot Access Features,I cannot access certain features of the application,account_access,high,new,access|feature,api,Edge,tablet
+cust-016,paul.harris@example.com,Paul Harris,Cosmetic UI Issue,There is a minor cosmetic issue with the user interface styling,bug_report,low,new,minor|cosmetic,email,Chrome,mobile
+cust-017,quinn.martin@example.com,Quinn Martin,Billing Subscription,I need help understanding my subscription billing cycle,billing_question,medium,new,subscription|billing,web_form,Safari,desktop
+cust-018,rachel.thompson@example.com,Rachel Thompson,Login Credentials Not Working,My username and password combination is not being accepted,account_access,urgent,in_progress,login|credentials,api,Firefox,mobile
+cust-019,samuel.clark@example.com,Samuel Clark,App Performance Slow,The application is running very slowly and performance is degraded,technical_issue,high,new,performance|slow,chat,Chrome,desktop
+cust-020,tina.robinson@example.com,Tina Robinson,Improvement Idea,The search functionality could be improved with better filters,feature_request,medium,new,improvement|search,email,Edge,tablet
+cust-021,ulysses.garcia@example.com,Ulysses Garcia,System Error Messages,I keep seeing error messages that I cannot understand,technical_issue,high,in_progress,error|exception,web_form,Safari,mobile
+cust-022,victoria.rodriguez@example.com,Victoria Rodriguez,Email Verification Issue,I cannot receive the email verification code for signup,account_access,high,new,email|verification,api,Firefox,desktop
+cust-023,william.lewis@example.com,William Lewis,Invoice Number Missing,My invoice is missing the required invoice number,billing_question,medium,in_progress,invoice|number,chat,Chrome,tablet
+cust-024,xena.walker@example.com,Xena Walker,Defect in Checkout Process,The checkout process has a defect preventing purchases,bug_report,urgent,in_progress,defect|checkout,email,Safari,mobile
+cust-025,yancy.hall@example.com,Yancy Hall,Cannot Sign In New Device,I am unable to sign in from my new device,account_access,urgent,new,signin|device,web_form,Edge,desktop
+cust-026,zara.young@example.com,Zara Young,Monthly Invoice,Where can I access my monthly invoice statements,billing_question,low,new,invoice|statement,api,Firefox,mobile
+cust-027,adam.king@example.com,Adam King,Regression Testing Needed,This is a regression that appeared in the latest update,bug_report,high,in_progress,regression|update,chat,Chrome,desktop
+cust-028,bella.wright@example.com,Bella Wright,Account Access Denied,I am getting access denied errors when trying to login,account_access,high,new,access|denied,email,Safari,tablet
+cust-029,charles.lopez@example.com,Charles Lopez,Blocking Issue,This issue is completely blocking me from using the app,technical_issue,urgent,in_progress,blocking|critical,web_form,Firefox,mobile
+cust-030,diana.hill@example.com,Diana Hill,Nice to Have Feature,It would be nice to have offline functionality in the app,feature_request,low,new,nice-to-have|offline,api,Chrome,desktop
+cust-031,edward.scott@example.com,Edward Scott,Cannot Access Account,I am unable to access my account for several days,account_access,urgent,in_progress,access|account,chat,Edge,mobile
+cust-032,faye.green@example.com,Faye Green,Duplicate Charges,I see duplicate charges on my billing statement,billing_question,urgent,in_progress,duplicate|charge,email,Safari,desktop
+cust-033,george.adams@example.com,George Adams,Crash on Exit,The application crashes when I try to exit the program,technical_issue,high,new,crash|exit,web_form,Firefox,tablet
+cust-034,hannah.nelson@example.com,Hannah Nelson,Password Change Failed,My attempt to change my password failed with an error,account_access,high,new,password|change,api,Chrome,mobile
+cust-035,iris.carter@example.com,Iris Carter,Cancel Subscription,I would like to cancel my current subscription immediately,billing_question,high,in_progress,cancel|subscription,chat,Safari,desktop
+cust-036,james.phillips@example.com,James Phillips,Steps to Fix Bug,Here are the exact steps to reproduce this critical bug,bug_report,high,in_progress,steps|reproduce,email,Firefox,mobile
+cust-037,karen.campbell@example.com,Karen Campbell,Production Is Down,The production environment is completely offline right now,technical_issue,urgent,in_progress,production|down,web_form,Edge,desktop
+cust-038,leon.parker@example.com,Leon Parker,ASAP Resolution Needed,I need this resolved as soon as possible today,account_access,high,new,urgent|asap,api,Chrome,tablet
+cust-039,molly.evans@example.com,Molly Evans,Refund Processing,When will my refund be processed to my account,billing_question,medium,in_progress,refund|processing,chat,Safari,mobile
+cust-040,nathan.edwards@example.com,Nathan Edwards,API Documentation,Could we have better API documentation for developers,feature_request,medium,new,documentation|api,email,Firefox,desktop
+cust-041,olivia.collins@example.com,Olivia Collins,Sign In Issue,Having trouble signing in to my account today,account_access,urgent,new,signin|account,web_form,Chrome,mobile
+cust-042,patrick.stewart@example.com,Patrick Stewart,System Crashes Regularly,The system crashes multiple times per hour consistently,technical_issue,urgent,in_progress,crash|critical,api,Edge,desktop
+cust-043,quinn.morris@example.com,Quinn Morris,Pricing Question,I have a question about your pricing structure,billing_question,low,new,pricing|question,chat,Safari,tablet
+cust-044,rachel.rogers@example.com,Rachel Rogers,Enhancement Ideas,Multiple enhancement ideas for the next version,feature_request,medium,new,enhancement|ideas,email,Firefox,mobile
+cust-045,simon.reed@example.com,Simon Reed,UI Bug Found,I found a bug in the user interface on the dashboard,bug_report,medium,in_progress,ui|bug,web_form,Chrome,desktop
+cust-046,tara.cook@example.com,Tara Cook,Access Restricted,My access to the premium features has been restricted,account_access,high,new,access|premium,api,Safari,mobile
+cust-047,victor.morgan@example.com,Victor Morgan,Database Error,I am seeing database errors when using the application,technical_issue,high,in_progress,database|error,chat,Firefox,desktop
+cust-048,wendy.bell@example.com,Wendy Bell,Invoice Discrepancy,There is a discrepancy in my billing invoice amounts,billing_question,high,new,invoice|discrepancy,email,Edge,tablet
+cust-049,xavier.murphy@example.com,Xavier Murphy,Account Recovery,I need help recovering my locked account access,account_access,urgent,in_progress,recovery|account,web_form,Chrome,mobile
+cust-050,yvonne.bishop@example.com,Yvonne Bishop,User Experience Improvement,The user experience could be improved significantly overall,feature_request,medium,new,ux|improvement,api,Safari,desktop
