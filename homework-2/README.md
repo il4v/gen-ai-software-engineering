@@ -6,6 +6,12 @@ A comprehensive REST API for managing customer support tickets with multi-format
 
 ---
 
+## 👤 Author
+
+Ilya Chantsov ([@il4v](https://github.com/il4v)) — illia4v@gmail.com
+
+---
+
 ## ✨ Key Features
 
 - **Multi-Format Import**: Parse CSV, JSON, and XML ticket files with validation
