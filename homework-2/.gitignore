@@ -1,0 +1,22 @@
+# Dev manager working docs, not for review
+PLAN.md
+FEATURE_SPEC.md
+
+# PR description draft — working doc with manual fill-in sections, not for the repo
+PR-DESCRIPTION-DRAFT.md
+
+# Manual review plan — working doc, not for the repo
+MANUAL-REVIEW-PLAN.md
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Environment
+.env
+
+# OS
+.DS_Store

@@ -1,0 +1,6 @@
+customer_id,customer_email,customer_name,subject,description
+cust-001,invalid-email-format,Alice Johnson,Test,This is a test
+cust-002,bob@example.com,Bob,,Missing subject
+cust-003,charlie@example.com,,Missing name,Test description
+,unknown@example.com,Missing ID,Test,This is a test
+cust-005,missing-email-completely,User,Test,Test description

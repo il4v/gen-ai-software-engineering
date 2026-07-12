@@ -1,0 +1,7 @@
+{
+  "customer_id": "cust-001",
+  "customer_email": "invalid-email",
+  "customer_name": "Test User",
+  "subject": "Test",
+  "description": "Test description"
+}

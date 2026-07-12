@@ -1,0 +1,322 @@
+[
+  {
+    "customer_id": "cust-101",
+    "customer_email": "alice.johnson@example.com",
+    "customer_name": "Alice Johnson",
+    "subject": "Cannot Login",
+    "description": "I cannot access my account after resetting my password",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "new",
+    "tags": ["urgent", "account"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-102",
+    "customer_email": "bob.smith@example.com",
+    "customer_name": "Bob Smith",
+    "subject": "App Crashes on Startup",
+    "description": "The application crashes immediately when I launch it",
+    "category": "technical_issue",
+    "priority": "high",
+    "status": "new",
+    "tags": ["crash", "bug"],
+    "metadata": {
+      "source": "api",
+      "browser": "Safari",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-103",
+    "customer_email": "charlie.brown@example.com",
+    "customer_name": "Charlie Brown",
+    "subject": "Unexpected Charge",
+    "description": "There is an unauthorized charge on my invoice from last month",
+    "category": "billing_question",
+    "priority": "urgent",
+    "status": "in_progress",
+    "tags": ["billing", "payment"],
+    "metadata": {
+      "source": "email",
+      "browser": "Firefox",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-104",
+    "customer_email": "diana.prince@example.com",
+    "customer_name": "Diana Prince",
+    "subject": "Password Reset Required",
+    "description": "I need to reset my password as I forgot it",
+    "category": "account_access",
+    "priority": "high",
+    "status": "new",
+    "tags": ["password", "access"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Edge",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "cust-105",
+    "customer_email": "evan.davis@example.com",
+    "customer_name": "Evan Davis",
+    "subject": "Feature Request Dark Mode",
+    "description": "Would be great if the app had a dark mode for night time usage",
+    "category": "feature_request",
+    "priority": "medium",
+    "status": "new",
+    "tags": ["feature", "suggestion"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Chrome",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-106",
+    "customer_email": "fiona.green@example.com",
+    "customer_name": "Fiona Green",
+    "subject": "2FA Not Working",
+    "description": "Two factor authentication is not working for my account",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "new",
+    "tags": ["security", "2fa"],
+    "metadata": {
+      "source": "api",
+      "browser": "Safari",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-107",
+    "customer_email": "grace.lee@example.com",
+    "customer_name": "Grace Lee",
+    "subject": "Invoice Details Wrong",
+    "description": "The invoice shows incorrect billing details for my account",
+    "category": "billing_question",
+    "priority": "high",
+    "status": "in_progress",
+    "tags": ["invoice", "billing"],
+    "metadata": {
+      "source": "email",
+      "browser": "Firefox",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-108",
+    "customer_email": "henry.wilson@example.com",
+    "customer_name": "Henry Wilson",
+    "subject": "Steps to Reproduce Bug",
+    "description": "I can reproduce the bug by clicking button A then button B",
+    "category": "bug_report",
+    "priority": "high",
+    "status": "new",
+    "tags": ["defect", "regression"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-109",
+    "customer_email": "iris.martinez@example.com",
+    "customer_name": "Iris Martinez",
+    "subject": "Production Server Down",
+    "description": "The production server is completely down affecting all users",
+    "category": "technical_issue",
+    "priority": "urgent",
+    "status": "in_progress",
+    "tags": ["outage", "critical"],
+    "metadata": {
+      "source": "api",
+      "browser": "Safari",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-110",
+    "customer_email": "jack.thompson@example.com",
+    "customer_name": "Jack Thompson",
+    "subject": "Refund Request",
+    "description": "I would like to request a refund for the previous purchase",
+    "category": "billing_question",
+    "priority": "medium",
+    "status": "new",
+    "tags": ["refund", "payment"],
+    "metadata": {
+      "source": "email",
+      "browser": "Edge",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "cust-111",
+    "customer_email": "karen.white@example.com",
+    "customer_name": "Karen White",
+    "subject": "Account Locked Out",
+    "description": "My account appears to be locked and I cannot login",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "new",
+    "tags": ["locked", "access"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Firefox",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-112",
+    "customer_email": "liam.taylor@example.com",
+    "customer_name": "Liam Taylor",
+    "subject": "Critical Security Issue",
+    "description": "There is a critical security vulnerability in the system",
+    "category": "technical_issue",
+    "priority": "urgent",
+    "status": "in_progress",
+    "tags": ["security", "critical"],
+    "metadata": {
+      "source": "api",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-113",
+    "customer_email": "mia.anderson@example.com",
+    "customer_name": "Mia Anderson",
+    "subject": "Enhancement Suggestion",
+    "description": "It would be nice to have email notifications for updates",
+    "category": "feature_request",
+    "priority": "low",
+    "status": "new",
+    "tags": ["suggestion", "enhancement"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Safari",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-114",
+    "customer_email": "noah.thomas@example.com",
+    "customer_name": "Noah Thomas",
+    "subject": "Payment Failed",
+    "description": "My payment is failing when trying to checkout",
+    "category": "billing_question",
+    "priority": "high",
+    "status": "in_progress",
+    "tags": ["payment", "error"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Firefox",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-115",
+    "customer_email": "olivia.jackson@example.com",
+    "customer_name": "Olivia Jackson",
+    "subject": "Cannot Access Features",
+    "description": "I cannot access certain features of the application",
+    "category": "account_access",
+    "priority": "high",
+    "status": "new",
+    "tags": ["access", "feature"],
+    "metadata": {
+      "source": "api",
+      "browser": "Edge",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "cust-116",
+    "customer_email": "paul.harris@example.com",
+    "customer_name": "Paul Harris",
+    "subject": "Cosmetic UI Issue",
+    "description": "There is a minor cosmetic issue with the user interface styling",
+    "category": "bug_report",
+    "priority": "low",
+    "status": "new",
+    "tags": ["minor", "cosmetic"],
+    "metadata": {
+      "source": "email",
+      "browser": "Chrome",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-117",
+    "customer_email": "quinn.martin@example.com",
+    "customer_name": "Quinn Martin",
+    "subject": "Billing Subscription",
+    "description": "I need help understanding my subscription billing cycle",
+    "category": "billing_question",
+    "priority": "medium",
+    "status": "new",
+    "tags": ["subscription", "billing"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Safari",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-118",
+    "customer_email": "rachel.thompson@example.com",
+    "customer_name": "Rachel Thompson",
+    "subject": "Login Credentials Not Working",
+    "description": "My username and password combination is not being accepted",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "in_progress",
+    "tags": ["login", "credentials"],
+    "metadata": {
+      "source": "api",
+      "browser": "Firefox",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "cust-119",
+    "customer_email": "samuel.clark@example.com",
+    "customer_name": "Samuel Clark",
+    "subject": "App Performance Slow",
+    "description": "The application is running very slowly and performance is degraded",
+    "category": "technical_issue",
+    "priority": "high",
+    "status": "new",
+    "tags": ["performance", "slow"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "cust-120",
+    "customer_email": "tina.robinson@example.com",
+    "customer_name": "Tina Robinson",
+    "subject": "Improvement Idea",
+    "description": "The search functionality could be improved with better filters",
+    "category": "feature_request",
+    "priority": "medium",
+    "status": "new",
+    "tags": ["improvement", "search"],
+    "metadata": {
+      "source": "email",
+      "browser": "Edge",
+      "device_type": "tablet"
+    }
+  }
+]
