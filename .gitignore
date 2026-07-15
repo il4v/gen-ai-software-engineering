@@ -48,6 +48,7 @@ tmp/
 temp/
 *.tmp
 *.temp
+docs-tmp/
 
 # OS generated files
 .DS_Store
