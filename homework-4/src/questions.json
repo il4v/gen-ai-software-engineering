@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "Which data structure uses LIFO (Last-In-First-Out) order?",
+    "choices": ["Queue", "Stack", "Heap", "Graph"],
+    "answer_index": 1
+  },
+  {
+    "id": 2,
+    "question": "What does \"HTTP\" stand for?",
+    "choices": [
+      "HyperText Transfer Protocol",
+      "High Transfer Text Protocol",
+      "HyperText Transmission Process",
+      "Host Transfer Text Protocol"
+    ],
+    "answer_index": 0
+  },
+  {
+    "id": 3,
+    "question": "Which of these is NOT a programming paradigm?",
+    "choices": ["Object-Oriented", "Functional", "Alphabetical", "Procedural"],
+    "answer_index": 2
+  },
+  {
+    "id": 4,
+    "question": "In Big-O notation, what is the time complexity of binary search on a sorted array?",
+    "choices": ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
+    "answer_index": 1
+  },
+  {
+    "id": 5,
+    "question": "Who created the Linux kernel?",
+    "choices": ["Linus Torvalds", "Guido van Rossum", "Dennis Ritchie", "Ken Thompson"],
+    "answer_index": 0
+  },
+  {
+    "id": 6,
+    "question": "Which of these languages is statically typed?",
+    "choices": ["Python", "JavaScript", "Java", "Ruby"],
+    "answer_index": 2
+  },
+  {
+    "id": 7,
+    "question": "What does \"SQL\" stand for?",
+    "choices": [
+      "Structured Query Language",
+      "Sequential Query Language",
+      "Structured Question Language",
+      "Simple Query Language"
+    ],
+    "answer_index": 0
+  },
+  {
+    "id": 8,
+    "question": "Which HTTP status code means \"Not Found\"?",
+    "choices": ["200", "301", "404", "500"],
+    "answer_index": 2
+  },
+  {
+    "id": 9,
+    "question": "What year was the Python programming language first released?",
+    "choices": ["1989", "1991", "1995", "2000"],
+    "answer_index": 1
+  },
+  {
+    "id": 10,
+    "question": "Which of these is a distributed version control system?",
+    "choices": ["SVN", "CVS", "Git", "Perforce"],
+    "answer_index": 2
+  }
+]
