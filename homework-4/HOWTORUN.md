@@ -20,13 +20,16 @@ Open **http://localhost:5000** in a browser. Play the quiz, submit a score, view
 
 ## 2. Run the tests
 
-Backend (from `homework-4/`, no `cd` needed — the venv from step 1 must be active):
+Backend (pytest), from `homework-4/` — needs a separate terminal from step 1 if the app is still running
+there. Activate the venv explicitly (it lives at `src/.venv`, created in step 1):
 
 ```bash
+source src/.venv/bin/activate
 pytest tests/ -v
 ```
 
-Expect **24 passed**.
+Expect **24 passed**. (If you skipped step 1's venv entirely: `python3 -m venv src/.venv && source
+src/.venv/bin/activate && pip install -r src/requirements.txt pytest` first.)
 
 Frontend (from `homework-4/`):
 
@@ -39,13 +42,14 @@ Expect **18 passed**.
 
 ## 3. Run the 4-agent pipeline
 
-From `homework-4/`, with the Python venv active (step 1) so `pytest` is on `PATH`, or don't worry about it —
-`run-pipeline.sh` falls back to `src/.venv/bin/pytest` or `python3 -m pytest` automatically if a bare `pytest`
-isn't found:
+From `homework-4/`:
 
 ```bash
 ./run-pipeline.sh
 ```
+
+No manual venv activation needed here — unlike step 2, `run-pipeline.sh` resolves `pytest` itself (tries
+`src/.venv/bin/pytest`, then `pytest` on `PATH`, then falls back to `python3 -m pytest`).
 
 This invokes, for each of the 3 seeded bugs in `context/bugs/`, all 4 required agents in order:
 `research-verifier` → `bug-fixer` → `security-verifier` → `unit-test-generator`. No manual per-agent steps.
@@ -74,6 +78,7 @@ Per bug, under `context/bugs/<NNN>/`:
 ## Troubleshooting
 
 - **`pytest: command not found`** when running the app's own tests directly (not via the pipeline, which
-  handles this automatically): activate the venv from step 1, or run `python3 -m pytest tests/ -v` instead.
+  handles this automatically): `source src/.venv/bin/activate` first, or run `python3 -m pytest tests/ -v`
+  instead.
 - **`claude: command not found`**: only step 3 (running the pipeline itself) needs the Claude Code CLI —
   steps 1 and 2 don't.
