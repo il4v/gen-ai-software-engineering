@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dev Trivia Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Dev Trivia Challenge</h1>
+
+    <section id="landing-screen">
+      <p>10 programming &amp; tech trivia questions. Enter your name and start.</p>
+      <input id="name-input" type="text" placeholder="Your name" maxlength="40">
+      <button id="start-btn">Start Quiz</button>
+      <button id="view-leaderboard-btn" class="secondary">View Leaderboard</button>
+    </section>
+
+    <section id="quiz-screen" class="hidden">
+      <div id="question-container"></div>
+      <button id="submit-btn" class="hidden">Submit</button>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <h2>Your score</h2>
+      <p id="score-display"></p>
+      <button id="show-leaderboard-btn">View Leaderboard</button>
+      <button id="play-again-btn" class="secondary">Play Again</button>
+    </section>
+
+    <section id="leaderboard-screen" class="hidden">
+      <h2>Leaderboard</h2>
+      <ol id="leaderboard-list"></ol>
+      <button id="back-btn" class="secondary">Back</button>
+    </section>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
