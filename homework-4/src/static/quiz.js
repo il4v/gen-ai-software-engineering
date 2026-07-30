@@ -87,7 +87,9 @@ async function showLeaderboard() {
 
   leaderboardList.innerHTML = "";
   entries.forEach((entry) => {
-    leaderboardList.innerHTML += `<li>${entry.name} — ${entry.score}</li>`;
+    const li = document.createElement("li");
+    li.textContent = `${entry.name} — ${entry.score}`;
+    leaderboardList.appendChild(li);
   });
 
   showScreen(leaderboardScreen);

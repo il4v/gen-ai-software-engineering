@@ -29,6 +29,16 @@ Process:
      claimed vs. what you actually found
    - **Research Quality Assessment** — the level (from the skill) plus your reasoning for assigning it
    - **References** — every file:line you personally checked, so the next agent can trust the citation trail
+6. End the file with one final line, alone, in exactly this format (no surrounding punctuation, nothing else
+   on the line):
+   ```
+   Research Quality: <Level>
+   ```
+   where `<Level>` is exactly one of the skill's four labels (`Verified`, `Mostly Verified`, `Needs Rework`,
+   `Unverifiable`). This line is parsed by an automated script to decide whether the pipeline continues — it
+   must be the literal, final, standalone line of the file, not embedded in a sentence. It's fine, and
+   expected, for your prose elsewhere in the document (e.g. explaining why a level does *not* apply) to also
+   mention other level names in passing — only this exact final line is treated as the verdict.
 
 Do not soften discrepancies to make the research look better than it is — the Bug Planner depends on this
 report being honest. If you cannot verify a claim (e.g. the referenced file no longer exists), say so plainly

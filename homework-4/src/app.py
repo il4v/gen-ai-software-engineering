@@ -29,14 +29,14 @@ def save_leaderboard(entries):
 
 def compute_score(answers, questions):
     score = 0
-    for i in range(len(answers) - 1):
+    for i in range(len(answers)):
         if answers[i] == questions[i]["answer_index"]:
             score += 1
     return score
 
 
 def sorted_leaderboard(entries):
-    return sorted(entries, key=lambda e: e["score"])
+    return sorted(entries, key=lambda e: e["score"], reverse=True)
 
 
 @app.route("/")

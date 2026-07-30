@@ -1,2 +1,5 @@
 # Internal planning/prep files — not part of the submission
 docs-tmp/
+
+# Test run artifacts (root .gitignore covers __pycache__/, .venv/, node_modules/, but not this)
+.pytest_cache/
