@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Maze Runner</title>
+<style>
+  body { font-family: sans-serif; background: #1e1e2e; color: #eee; display: flex; flex-direction: column; align-items: center; }
+  canvas { background: #000; margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>Maze Runner</h1>
+<div id="controls">
+  <label>Difficulty:
+    <select id="difficulty">
+      <option value="small">Small</option>
+      <option value="medium" selected>Medium</option>
+      <option value="large">Large</option>
+    </select>
+  </label>
+  <button id="newMaze">New Maze</button>
+  <span id="hud">Moves: 0 | Time: 00:00</span>
+</div>
+<canvas id="canvas" width="760" height="760"></canvas>
+<script>
+const DIFFICULTIES = {
+  small:  { cols: 15, rows: 15 },
+  medium: { cols: 25, rows: 25 },
+  large:  { cols: 35, rows: 35 },
+};
+
+function generateMaze(cols, rows) {
+  const grid = [];
+  for (let r = 0; r < rows; r++) {
+    const row = [];
+    for (let c = 0; c < cols; c++) {
+      row.push({ top: true, right: true, bottom: true, left: true, visited: false });
+    }
+    grid.push(row);
+  }
+
+  const stack = [];
+  let current = { r: 0, c: 0 };
+  grid[0][0].visited = true;
+  stack.push(current);
+
+  const dirs = [
+    { dr: -1, dc: 0, wall: 'top',    opposite: 'bottom' },
+    { dr: 1,  dc: 0, wall: 'bottom', opposite: 'top' },
+    { dr: 0,  dc: -1, wall: 'left',  opposite: 'right' },
+    { dr: 0,  dc: 1,  wall: 'right', opposite: 'left' },
+  ];
+
+  while (stack.length > 0) {
+    current = stack[stack.length - 1];
+    const unvisited = [];
+    for (const d of dirs) {
+      const nr = current.r + d.dr;
+      const nc = current.c + d.dc;
+      if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && !grid[nr][nc].visited) {
+        unvisited.push({ r: nr, c: nc, dir: d });
+      }
+    }
+    if (unvisited.length === 0) {
+      stack.pop();
+      continue;
+    }
+    const next = unvisited[Math.floor(Math.random() * unvisited.length)];
+    grid[current.r][current.c][next.dir.wall] = false;
+    grid[next.r][next.c][next.dir.opposite] = false;
+    grid[next.r][next.c].visited = true;
+    stack.push({ r: next.r, c: next.c });
+  }
+
+  return grid;
+}
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const CANVAS_SIZE = 760;
+
+let state = null;
+
+function newGame(difficultyKey) {
+  const existingOverlay = document.getElementById('winOverlay');
+  if (existingOverlay) existingOverlay.remove();
+
+  const { cols, rows } = DIFFICULTIES[difficultyKey];
+  const grid = generateMaze(cols, rows);
+  const cellSize = CANVAS_SIZE / Math.max(cols, rows);
+  state = {
+    grid, cols, rows, cellSize,
+    player: { r: 0, c: 0 },
+    moves: 0,
+    startTime: null,
+    elapsedMs: 0,
+    won: false,
+  };
+  document.getElementById('hud').textContent = 'Moves: 0 | Time: 00:00';
+  render();
+}
+
+function render() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const { grid, cols, rows, cellSize, player } = state;
+
+  // exit cell highlight
+  ctx.fillStyle = '#2e7d32';
+  ctx.fillRect((cols - 1) * cellSize, (rows - 1) * cellSize, cellSize, cellSize);
+
+  // walls
+  ctx.strokeStyle = '#eee';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const x = c * cellSize;
+      const y = r * cellSize;
+      const cell = grid[r][c];
+      if (cell.top) { ctx.moveTo(x, y); ctx.lineTo(x + cellSize, y); }
+      if (cell.left) { ctx.moveTo(x, y); ctx.lineTo(x, y + cellSize); }
+      if (cell.right) { ctx.moveTo(x + cellSize, y); ctx.lineTo(x + cellSize, y + cellSize); }
+      if (cell.bottom) { ctx.moveTo(x, y + cellSize); ctx.lineTo(x + cellSize, y + cellSize); }
+    }
+  }
+  ctx.stroke();
+
+  // player
+  ctx.fillStyle = '#42a5f5';
+  const px = player.c * cellSize + cellSize / 2;
+  const py = player.r * cellSize + cellSize / 2;
+  ctx.beginPath();
+  ctx.arc(px, py, cellSize * 0.3, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+document.getElementById('difficulty').addEventListener('change', (e) => newGame(e.target.value));
+document.getElementById('newMaze').addEventListener('click', () => newGame(document.getElementById('difficulty').value));
+
+const KEY_TO_DELTA = {
+  ArrowUp: { dr: -1, dc: 0, wall: 'top' },
+  KeyW:    { dr: -1, dc: 0, wall: 'top' },
+  ArrowDown: { dr: 1, dc: 0, wall: 'bottom' },
+  KeyS:      { dr: 1, dc: 0, wall: 'bottom' },
+  ArrowLeft: { dr: 0, dc: -1, wall: 'left' },
+  KeyA:      { dr: 0, dc: -1, wall: 'left' },
+  ArrowRight: { dr: 0, dc: 1, wall: 'right' },
+  KeyD:       { dr: 0, dc: 1, wall: 'right' },
+};
+
+function formatTime(ms) {
+  const totalSec = Math.floor(ms / 1000);
+  const mm = String(Math.floor(totalSec / 60)).padStart(2, '0');
+  const ss = String(totalSec % 60).padStart(2, '0');
+  return `${mm}:${ss}`;
+}
+
+function updateHud() {
+  if (!state) return;
+  const elapsed = state.won ? state.elapsedMs
+    : (state.startTime ? Date.now() - state.startTime : 0);
+  document.getElementById('hud').textContent = `Moves: ${state.moves} | Time: ${formatTime(elapsed)}`;
+}
+
+function tryMove(dr, dc, wall) {
+  if (!state || state.won) return;
+  const { grid, player, cols, rows } = state;
+  const cell = grid[player.r][player.c];
+  if (cell[wall]) return; // wall blocks this direction
+
+  const nr = player.r + dr;
+  const nc = player.c + dc;
+  if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) return;
+
+  if (state.startTime === null) state.startTime = Date.now();
+
+  player.r = nr;
+  player.c = nc;
+  state.moves++;
+
+  if (player.r === rows - 1 && player.c === cols - 1) {
+    state.won = true;
+    state.elapsedMs = Date.now() - state.startTime;
+    showWinOverlay();
+  }
+
+  updateHud();
+  render();
+}
+
+document.addEventListener('keydown', (e) => {
+  const d = KEY_TO_DELTA[e.code];
+  if (d) {
+    e.preventDefault();
+    tryMove(d.dr, d.dc, d.wall);
+  }
+});
+
+setInterval(updateHud, 250);
+
+function showWinOverlay() {
+  const overlay = document.createElement('div');
+  overlay.id = 'winOverlay';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:24px;';
+  overlay.innerHTML = `
+    <div>You reached the exit!</div>
+    <div>Moves: ${state.moves} | Time: ${formatTime(state.elapsedMs)}</div>
+    <button id="winNewMaze" style="margin-top:16px;font-size:18px;padding:8px 16px;">New Maze</button>
+  `;
+  document.body.appendChild(overlay);
+  document.getElementById('winNewMaze').addEventListener('click', () => {
+    overlay.remove();
+    newGame(document.getElementById('difficulty').value);
+  });
+}
+
+newGame('medium');
+</script>
+</body>
+</html>
