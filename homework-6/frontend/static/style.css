@@ -1,0 +1,45 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  color: #666;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.card {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+.card-settled { background: #dcf5e0; }
+.card-flagged_for_review { background: #fff3cd; }
+.card-rejected { background: #fbdada; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.status-settled { color: #1a7f37; }
+.status-flagged_for_review { color: #9a6700; }
+.status-rejected { color: #cf222e; }
