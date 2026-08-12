@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "stdio",
+      "command": "sh",
+      "args": [
+        "-c",
+        "docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN=\"$(/usr/local/bin/gh auth token)\" ghcr.io/github/github-mcp-server stdio"
+      ]
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/wildix/WorkingProjects/gen-ai-software-engineering/homework-5"
+      ],
+      "env": {}
+    },
+    "lorem-ipsum": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "custom-mcp-server/server.py"
+      ]
+    }
+  }
+}
