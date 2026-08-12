@@ -1,0 +1,29 @@
+# Fraud-scoring policy as data, not code — see pipeline/rule_engine.py.
+#
+# These defaults must reproduce the pipeline's original hardcoded behavior exactly
+# (specification-challenge.md MLO-C1): $10,000 high-value threshold (mirrors the real-world CTR
+# reporting threshold), cross-border (country != US), and unusual timing (outside 06:00-22:00 UTC),
+# each scored so a single high-value hit alone reaches the flag threshold, while the two "soft"
+# signals need to combine to reach the same bar. See specification.md section 2 objective 2 for the
+# full rationale.
+
+flag_threshold: 50
+
+rules:
+  - name: high_value
+    field: amount
+    operator: gt
+    value: "10000"
+    score: 50
+
+  - name: cross_border
+    field: metadata.country
+    operator: ne
+    value: US
+    score: 25
+
+  - name: unusual_timing
+    field: timestamp_hour
+    operator: outside_hours
+    value: [6, 22]
+    score: 25

@@ -4,6 +4,29 @@ Queries run via the `context7` MCP server during Agent 2 (`pipeline-coder`)'s im
 pipeline stages, orchestrator, frontend, and MCP server, per `specification.md`'s Low-Level Tasks and
 `docs-tmp/PLAN-AI-DEVELOPER.md` §3 Step C.
 
+## Capstone Challenge extension — AI usage note
+
+The rule engine, `rule-engine-agent`, REST API gateway, and `demo.sh` (see `specification-challenge.md`)
+were built with Claude Code end-to-end from a written spec, following the same discipline as the rest of
+this project:
+
+- **Behavior-preserving refactor verified, not assumed**: after moving fraud-scoring from hardcoded
+  Python constants into `pipeline/rule_engine.py` + `config/fraud_rules.yaml`, the existing
+  `tests/test_fraud_detector.py` suite was rerun unmodified, and a full `python3 orchestrator.py` run was
+  compared against the known 3-settled/3-flagged/2-rejected baseline byte-for-byte before the refactor was
+  considered done (specification-challenge.md MLO-C1).
+- **The API gateway's idempotency was verified live**, not just unit-tested: a real `curl` POST was
+  submitted twice with different `amount` values for the same `transaction_id`, confirming the second
+  call returned the original (unchanged) result rather than reprocessing it.
+- **`demo.sh` was actually run**, not just written — confirmed all 3 fixture transactions produced their
+  intended terminal outcomes (settled/flagged/rejected) and that the background server process was
+  correctly torn down afterward (`ps aux` showed no orphaned `uvicorn` process).
+- **A self-review catch**: an early draft of `README.md`'s Capstone Challenge note referenced
+  `docs-tmp/SPECIFICATION-CHALLENGE.md` — the same "committed file depending on gitignored scratch"
+  mistake found and fixed earlier in this project's `/write-spec` skill. Caught immediately by checking
+  for other references to the old path, and fixed by moving the spec out of `docs-tmp/` into the committed
+  `specification-challenge.md` before it shipped.
+
 ## Query 1: Python `decimal` module — rounding for monetary amounts
 
 - Search: "decimal module ROUND_HALF_UP quantize for monetary rounding to 2 places"

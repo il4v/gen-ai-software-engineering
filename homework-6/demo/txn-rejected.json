@@ -1,0 +1,11 @@
+{
+  "transaction_id": "DEMO-003",
+  "timestamp": "2026-06-01T10:10:00Z",
+  "source_account": "ACC-5005",
+  "destination_account": "ACC-5006",
+  "amount": "-10.00",
+  "currency": "USD",
+  "transaction_type": "transfer",
+  "description": "Demo rejected transaction (invalid amount)",
+  "metadata": {"channel": "online", "country": "US"}
+}

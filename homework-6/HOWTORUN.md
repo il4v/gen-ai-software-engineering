@@ -61,11 +61,11 @@ every transaction with its outcome and reason/flags — read-only, reflecting wh
 ## 5. Run the tests and check coverage
 
 ```bash
-python3 -m pytest --cov=pipeline --cov=frontend --cov=mcp --cov-report=term-missing --cov-fail-under=80
+python3 -m pytest --cov=pipeline --cov=frontend --cov=mcp --cov=api --cov-report=term-missing --cov-fail-under=80
 ```
 
-38 tests, isolated from the real `shared/` directory via `tmp_path` fixtures (`tests/conftest.py`).
-Current coverage: 92%. The same check runs automatically as a Claude Code hook
+52 tests, isolated from the real `shared/` directory via `tmp_path` fixtures (`tests/conftest.py`).
+Current coverage: 93%. The same check runs automatically as a Claude Code hook
 (`.claude/hooks/check-coverage.sh`) and blocks `git push` if coverage drops below 80%.
 
 ## 6. Use the Claude Code slash commands
@@ -75,6 +75,43 @@ Inside a Claude Code session opened in `homework-6/`:
 - `/write-spec` — (re)generates `specification.md` and extends `agents.md`.
 - `/run-pipeline` — clears `shared/`, runs the full pipeline, and reports a summary plus any rejections.
 - `/validate-transactions` — runs the validator in `--dry-run` mode and reports a results table.
+- `/update-fraud-rules` — change fraud-detection policy in plain English (e.g. "flag anything over
+  $15,000"); edits `config/fraud_rules.yaml` and reports which known transaction outcomes changed.
+
+## 6a. Run the REST API gateway
+
+```bash
+python3 -m uvicorn api.server:app --port 8001
+```
+
+(A different port from the dashboard's 8000 in step 4 — run both at once if you like, they're
+independent services.)
+
+Write-capable, unlike the dashboard — `POST /transactions` submits a new transaction through the same
+validator → fraud_detector → settlement chain the batch path uses, and the result lands in
+`shared/results/` alongside everything else. Also `GET /transactions/{id}`, `GET /transactions`, and
+`GET /health`. See `specification-challenge.md` (in `docs-tmp/`) for the full design.
+
+## 6b. Run the zero-manual-step demo
+
+```bash
+./demo.sh
+```
+
+Starts the API gateway, waits for a real health check, submits 3 fixture transactions
+(`demo/txn-{settled,flagged,rejected}.json`) covering all three terminal outcomes, prints each result and
+the full transaction list, then shuts the server down automatically.
+
+## 6c. Change fraud policy without editing code
+
+```bash
+cat config/fraud_rules.yaml
+```
+
+Edit this file directly (or ask the `rule-engine-agent` / `/update-fraud-rules` to do it for you) to
+change fraud thresholds/signals without touching `pipeline/fraud_detector.py`. Any edit should be
+re-verified by rerunning `python3 orchestrator.py` and checking which of the 8 sample transactions'
+outcomes changed.
 
 ## 7. Start the MCP servers
 

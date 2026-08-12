@@ -21,7 +21,7 @@ esac
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 cd "$PROJECT_DIR" || exit 0
 
-COVERAGE_OUTPUT="$(python3 -m pytest --cov=pipeline --cov=frontend --cov=mcp --cov-report=term-missing --cov-fail-under=80 2>&1)"
+COVERAGE_OUTPUT="$(python3 -m pytest --cov=pipeline --cov=frontend --cov=mcp --cov=api --cov-report=term-missing --cov-fail-under=80 2>&1)"
 STATUS=$?
 
 if [ "$STATUS" -ne 0 ]; then
