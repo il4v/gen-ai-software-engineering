@@ -16,6 +16,11 @@ agent, a unit-test agent, and a documentation agent — each registered as a rea
 coverage-gate hook that blocks `git push` if test coverage drops below 80%. See `specification.md` for
 the full technical spec and `agents.md` for the domain rules every agent follows.
 
+**Capstone Challenge extension** (this branch): a 5th agent (`rule-engine-agent`, plus `/update-fraud-rules`)
+turns fraud policy into a data file instead of hardcoded logic, and a REST API gateway
+(`api/server.py`) lets transactions be submitted/queried over HTTP instead of only through the batch
+file feed. See `specification-challenge.md` for the full design.
+
 ## Pipeline stages
 
 - **Validator** (`pipeline/validator.py`) — checks required fields, a positive `Decimal` amount, and a
@@ -54,12 +59,18 @@ the full technical spec and `agents.md` for the domain rules every agent follows
                                  |
                                  v
                         shared/results/ (audit trail, 1 record per transaction)
-                          /                \
-                         v                  v
-              Web Dashboard          Custom MCP Server
-           (frontend/server.py)      (mcp/server.py: get_transaction_status,
-           read-only, GET /api/*      list_pipeline_results, pipeline://summary)
+                       /                |                  \
+                      v                 v                   v
+           Web Dashboard        Custom MCP Server      REST API Gateway
+        (frontend/server.py)   (mcp/server.py: get_    (api/server.py)
+        read-only, GET /api/*   transaction_status,     POST /transactions --> runs the same
+                                 list_pipeline_results,   validator/fraud_detector/settlement
+                                 pipeline://summary)       chain, writes into shared/results/ too
 ```
+
+Fraud Detector's scoring rules live in `config/fraud_rules.yaml` (not hardcoded) — see
+`pipeline/rule_engine.py` and the `rule-engine-agent`/`/update-fraud-rules` command for changing policy
+without editing code.
 
 ## Tech stack
 
@@ -72,6 +83,8 @@ the full technical spec and `agents.md` for the domain rules every agent follows
 | Docs/library lookups during code generation | `context7` MCP server |
 | Tests | pytest + pytest-cov + pytest-asyncio |
 | Coverage gate | Claude Code `PreToolUse` hook (`.claude/hooks/check-coverage.sh`), blocks `git push` below 80% |
+| Fraud-rule engine | `pipeline/rule_engine.py`, rules as data in `config/fraud_rules.yaml` (PyYAML) |
+| REST API gateway | FastAPI (`api/server.py`), separate service from the read-only dashboard |
 
 ## Where to go next
 

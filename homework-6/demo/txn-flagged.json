@@ -1,0 +1,11 @@
+{
+  "transaction_id": "DEMO-002",
+  "timestamp": "2026-06-01T10:05:00Z",
+  "source_account": "ACC-5003",
+  "destination_account": "ACC-5004",
+  "amount": "50000.00",
+  "currency": "USD",
+  "transaction_type": "wire_transfer",
+  "description": "Demo flagged transaction (high value)",
+  "metadata": {"channel": "branch", "country": "US"}
+}

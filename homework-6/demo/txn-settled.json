@@ -1,0 +1,11 @@
+{
+  "transaction_id": "DEMO-001",
+  "timestamp": "2026-06-01T10:00:00Z",
+  "source_account": "ACC-5001",
+  "destination_account": "ACC-5002",
+  "amount": "250.00",
+  "currency": "USD",
+  "transaction_type": "transfer",
+  "description": "Demo settled transaction",
+  "metadata": {"channel": "online", "country": "US"}
+}

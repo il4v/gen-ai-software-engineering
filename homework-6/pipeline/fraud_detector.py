@@ -1,54 +1,28 @@
-"""Stage 2 — Fraud Detection. Serves MLO-2 (specification.md section 2, objective 2)."""
+"""Stage 2 — Fraud Detection. Serves MLO-2 (specification.md section 2, objective 2).
+
+Scoring rules are data, not code — see pipeline/rule_engine.py and config/fraud_rules.yaml
+(specification-challenge.md MLO-C1). This module only wires the rule engine into the file-queue
+protocol; it holds no scoring logic of its own.
+"""
 from __future__ import annotations
 
 import json
 import shutil
-from datetime import datetime
-from decimal import Decimal
 from pathlib import Path
 
-from pipeline.models import make_envelope, to_decimal, utc_now_iso
+from pipeline.models import make_envelope, utc_now_iso
+from pipeline.rule_engine import evaluate, load_rules
 
 STAGE_NAME = "fraud_detector"
-HIGH_VALUE_THRESHOLD = Decimal("10000")
-HOME_COUNTRY = "US"
-BUSINESS_HOURS_START = 6
-BUSINESS_HOURS_END = 22
-FLAG_THRESHOLD = 50
+DEFAULT_RULES_PATH = Path(__file__).resolve().parent.parent / "config" / "fraud_rules.yaml"
 
 
-def process_transaction(data: dict) -> dict:
+def process_transaction(data: dict, rules_path: Path = DEFAULT_RULES_PATH) -> dict:
     """Pure scoring — never raises. amount/currency are already validated by this point."""
-    amount = to_decimal(data["amount"])
-    country = data.get("metadata", {}).get("country", HOME_COUNTRY)
-    hour = _parse_hour(data.get("timestamp", ""))
-
-    flags: list[str] = []
-    score = 0
-
-    if amount > HIGH_VALUE_THRESHOLD:
-        score += 50
-        flags.append("high_value")
-
-    if country != HOME_COUNTRY:
-        score += 25
-        flags.append("cross_border")
-
-    if hour is not None and not (BUSINESS_HOURS_START <= hour < BUSINESS_HOURS_END):
-        score += 25
-        flags.append("unusual_timing")
-
-    status = "flagged_for_review" if score >= FLAG_THRESHOLD else "cleared"
+    ruleset = load_rules(rules_path)
+    score, flags = evaluate(data, ruleset)
+    status = "flagged_for_review" if score >= ruleset.flag_threshold else "cleared"
     return {**data, "risk_score": score, "flags": flags, "status": status}
-
-
-def _parse_hour(timestamp: str) -> int | None:
-    if not timestamp:
-        return None
-    try:
-        return datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ").hour
-    except ValueError:
-        return None
 
 
 def _log(transaction_id: str, outcome: str) -> None:
