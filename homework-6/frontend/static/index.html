@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Transaction Pipeline Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h1>Transaction Pipeline Dashboard</h1>
+  <p class="subtitle">Read-only view of <code>shared/results/</code> — refresh after running the pipeline.</p>
+
+  <section id="summary" class="cards"></section>
+
+  <h2>Results</h2>
+  <table id="results-table">
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Currency</th>
+        <th>Reason / Flags</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="/app.js"></script>
+</body>
+</html>
